@@ -3,59 +3,288 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TerrisAstra – AI that brings the stars down to earth</title>
-    <meta name="description" content="TerrisAstra builds AI products that elevate human health and knowledge." />
+    <title>TerrisAstra</title>
+    <meta name="description" content="AI engineering." />
     <meta property="og:title" content="TerrisAstra" />
-    <meta property="og:description" content="AI that brings the stars down to earth." />
+    <meta property="og:description" content="AI engineering." />
     <meta property="og:image" content="/og.png" />
     <link rel="icon" href="favicon.ico" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .star {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 3s infinite linear;
+      }
+      
+      .particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(52, 211, 153, 0.6);
+        border-radius: 50%;
+        animation: float 8s infinite linear;
+      }
+      
+      .brain-constellation {
+        width: 240px;
+        height: 140px;
+        margin: 0 auto 3rem;
+      }
+      
+      .constellation-star {
+        fill: rgba(52, 211, 153, 0.9);
+        animation: starAppear 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      
+      .constellation-line {
+        stroke: rgba(52, 211, 153, 0.4);
+        stroke-width: 0.8;
+        fill: none;
+        animation: lineAppear 1.2s ease-out forwards;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+      }
+      
+      @keyframes starAppear {
+        0% { 
+          opacity: 0; 
+          transform: scale(0);
+        }
+        100% { 
+          opacity: 1; 
+          transform: scale(1);
+        }
+      }
+      
+      @keyframes lineAppear {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+      }
+      
+      @keyframes float {
+        0% { 
+          transform: translateY(100vh) scale(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% { 
+          transform: translateY(-100px) scale(1);
+          opacity: 0;
+        }
+      }
+      
+      .gradient-bg {
+        background: linear-gradient(180deg, 
+          #000000 0%, 
+          #0a0a0a 50%, 
+          #0f1011 100%);
+      }
+    </style>
   </head>
-  <body class="bg-slate-50 text-gray-800 antialiased">
+  <body class="gradient-bg text-white antialiased min-h-screen overflow-hidden">
+    <!-- Animated Stars -->
+    <div class="stars" id="stars"></div>
+    
     <!-- HERO -->
-    <header class="py-24 flex flex-col justify-center items-center text-center px-6">
-      <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight">
-        Terris<span class="text-indigo-600">Astra</span>
-      </h1>
-      <p class="mt-6 max-w-xl text-xl leading-relaxed">
-        AI solutions from the earth&nbsp;to&nbsp;the&nbsp;stars.
-      </p>
-      <a href="mailto:contact@terrisastra.com" class="mt-10 inline-block rounded-xl bg-indigo-600 py-3 px-8 text-white text-lg font-medium shadow-lg hover:bg-indigo-700 transition">
-        Contact us
-      </a>
-    </header>
-
-    <!-- FEATURES -->
-    <section class="py-20 bg-white/60 backdrop-blur">
-      <div class="max-w-5xl mx-auto px-6 grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 4v-4m-1 4h1a3 3 0 100-6h-1a3 3 0 100 6z" />
-          </svg>
-          <h3 class="mt-4 text-lg font-semibold">AI Research</h3>
-          <p class="mt-2 text-sm text-gray-600">Cutting‑edge models tuned for real‑world healthcare and life‑science challenges.</p>
-        </div>
-        <div class="text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l6 6-6 6" />
-          </svg>
-          <h3 class="mt-4 text-lg font-semibold">Scalable Systems</h3>
-          <p class="mt-2 text-sm text-gray-600">Cloud‑native architecture that scales from pilot to planetary‑scope workloads.</p>
-        </div>
-        <div class="text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.105 0-2 .672-2 1.5S10.895 11 12 11s2-.672 2-1.5S13.105 8 12 8z" />
-          </svg>
-          <h3 class="mt-4 text-lg font-semibold">Human‑centric Design</h3>
-          <p class="mt-2 text-sm text-gray-600">Tools that fit clinician workflows and respect data privacy by design.</p>
-        </div>
+    <section class="relative flex flex-col justify-center items-center text-center px-6 min-h-screen z-10">
+      <!-- Brain Constellation -->
+      <div class="brain-constellation">
+        <svg id="brain-svg"
+             viewBox="0 0 1024 732"
+             width="240" height="140"
+             preserveAspectRatio="xMidYMid meet"
+             xmlns="http://www.w3.org/2000/svg">
+          <!-- Outline only, no fill -->
+          <path id="brain-path"
+                d="M 436,56 C 405,54 370,60 340,77 C 325,78 309,86 296,92 C 267,94 242,104 220,121 C 201,127 181,134 164,149 C 132,168 111,190 101,217 C 80,224 69,240 69,262 C 54,275 44,292 42,314 C 34,331 35,348 40,365 C 39,371 35,378 40,384 C 35,395 37,406 42,417 C 45,417 46,430 50,432 C 52,461 59,480 68,494 C 78,510 88,524 104,528 C 120,560 186,558 266,547 C 273,558 280,566 287,574 C 298,597 316,611 338,620 C 356,636 378,647 419,631 C 458,629 489,620 499,590 C 509,589 522,584 543,574 C 558,571 570,563 581,554 C 592,562 615,558 638,554 C 674,552 699,547 711,537 C 728,532 745,527 758,517 C 788,527 816,531 839,517 C 906,524 959,510 973,438 C 984,426 981,408 976,390 C 987,372 972,357 957,341 C 955,320 945,305 930,292 C 932,278 927,266 907,256 C 899,232 885,217 868,206 C 868,181 847,165 816,153 C 792,124 762,103 727,88 C 713,77 699,76 685,78 C 669,58 641,53 603,60 C 593,53 582,53 572,53 C 549,51 529,50 512,50 C 483,44 459,48 436,56 z"
+                fill="none"
+                stroke="rgba(52,211,153,0.4)"
+                stroke-width="1.2"
+                stroke-dasharray="1000"
+                stroke-dashoffset="1000" />
+        </svg>
       </div>
+      
+      <h1 class="text-6xl sm:text-7xl font-light tracking-tight mb-6">
+        Terris<span class="text-emerald-400">Astra</span>
+      </h1>
+      
+      <p class="text-xl text-gray-400 mb-16">
+        AI engineering
+      </p>
+
+      <a href="mailto:contact@terrisastra.com" 
+         id="contact-link"
+         class="text-emerald-400 hover:text-emerald-300 transition-colors">
+        Contact
+      </a>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-10 text-center text-sm text-gray-500">
-      © 2025 Terris Astra 
+    <footer class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      <div class="text-sm text-gray-600">
+      </div>
     </footer>
+
+    <script>
+      // Create stars
+      function createStars() {
+        const starsContainer = document.getElementById('stars');
+        const numStars = 150;
+        
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          star.style.left = Math.random() * 100 + '%';
+          star.style.top = Math.random() * 100 + '%';
+          star.style.animationDelay = Math.random() * 3 + 's';
+          star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+          starsContainer.appendChild(star);
+        }
+      }
+      
+      // Create floating particles
+      function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+        document.body.appendChild(particle);
+        
+        setTimeout(() => {
+          particle.remove();
+        }, 8000);
+      }
+      
+      // === Brain-constellation JS ===
+      // run after the rest of your createStars() code
+      function createBrainConstellation() {
+        const svg      = document.getElementById('brain-svg');
+        const path     = document.getElementById('brain-path');
+        const STAR_R   = 1.6;          // radius of stars
+        const N_STARS  = 45;           // how many stars you want
+        const delay0   = 800;          // first star appears 0.8 s after load
+
+        // animate the outline drawing
+        path.style.animation = 'lineAppear 2s ease-out forwards';
+        path.style.animationDelay = '0.4s';
+
+        const length = path.getTotalLength();
+
+        // helper: create a star circle
+        function makeStar(cx, cy, i) {
+          const star = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          star.setAttribute('cx', cx);
+          star.setAttribute('cy', cy);
+          star.setAttribute('r', STAR_R);
+          star.setAttribute('fill', 'rgba(52,211,153,0.9)');
+          star.style.opacity = 0;
+          star.style.animation = `starAppear .8s ease-out forwards`;
+          star.style.animationDelay = `${(delay0 + i * 120) / 1000}s`;
+          return star;
+        }
+
+        // helper: connect two stars with a faint line
+        function makeLink(x1, y1, x2, y2, i) {
+          const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          line.setAttribute('x1', x1);
+          line.setAttribute('y1', y1);
+          line.setAttribute('x2', x2);
+          line.setAttribute('y2', y2);
+          line.setAttribute('stroke', 'rgba(52,211,153,0.4)');
+          line.setAttribute('stroke-width', '0.8');
+          line.style.strokeDasharray = 100;
+          line.style.strokeDashoffset = 100;
+          line.style.animation = `lineAppear 1.2s ease-out forwards`;
+          line.style.animationDelay = `${(delay0 + i * 120) / 1000}s`;
+          return line;
+        }
+
+        // generate stars + links
+        const points = [];
+        for (let i = 0; i < N_STARS; i++) {
+          const pos = path.getPointAtLength((i / (N_STARS - 1)) * length);
+          points.push(pos);
+          svg.appendChild(makeStar(pos.x, pos.y, i));
+          if (i) svg.appendChild(makeLink(points[i - 1].x, points[i - 1].y, pos.x, pos.y, i));
+        }
+      }
+      
+      // Initialize
+      createStars();
+      createBrainConstellation();
+      
+      // Create particles periodically
+      setInterval(createParticle, 2000);
+
+      // Scramble effect for contact link
+      (function() {
+        const contactLink = document.getElementById('contact-link');
+        if (!contactLink) return;
+        
+        const originalText = contactLink.innerText;
+        const chars = '!<>-_\\/[]{}—=+*^?#';
+        let interval = null;
+
+        const startScramble = (event) => {
+          let iteration = 0;
+          clearInterval(interval);
+          
+          interval = setInterval(() => {
+            event.target.innerText = event.target.innerText
+              .split('')
+              .map((letter, index) => {
+                if(index < iteration) {
+                  return originalText[index];
+                }
+              
+                return chars[Math.floor(Math.random() * chars.length)];
+              })
+              .join('');
+            
+            if(iteration >= originalText.length){
+              clearInterval(interval);
+            }
+            
+            iteration += 1/3;
+          }, 30);
+        }
+        
+        contactLink.addEventListener('mouseenter', startScramble);
+      })();
+    </script>
   </body>
 </html>
