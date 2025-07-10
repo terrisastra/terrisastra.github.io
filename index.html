@@ -254,9 +254,8 @@
         const N_STARS  = 45;           // how many stars you want
         const delay0   = 800;          // first star appears 0.8 s after load
 
-        // animate the outline drawing
-        path.style.animation = 'lineAppear 2s ease-out forwards';
-        path.style.animationDelay = '0.4s';
+        // hide the outline - just keep the stars
+        path.style.display = 'none';
 
         const length = path.getTotalLength();
 
@@ -264,8 +263,8 @@
         function makeStar(cx, cy, i) {
           const star = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
           
-          // Vary star sizes for more realistic look
-          const sizes = [1.2, 1.6, 2.0, 2.4, 2.8];
+          // Vary star sizes for more realistic look - larger with more variation
+          const sizes = [1.8, 2.4, 3.0, 3.8, 4.4, 5.2];
           const starSize = sizes[Math.floor(Math.random() * sizes.length)];
           
           star.setAttribute('cx', cx);
@@ -321,7 +320,8 @@
           
           points.push(finalPos);
           svg.appendChild(makeStar(finalPos.x, finalPos.y, i));
-          if (i) svg.appendChild(makeLink(points[i - 1].x, points[i - 1].y, finalPos.x, finalPos.y, i));
+          // Skip the connecting lines to have just stars
+          // if (i) svg.appendChild(makeLink(points[i - 1].x, points[i - 1].y, finalPos.x, finalPos.y, i));
         }
       }
       
