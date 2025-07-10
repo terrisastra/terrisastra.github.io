@@ -63,7 +63,7 @@
       
       .constellation-star {
         fill: rgba(52, 211, 153, 0.9);
-        animation: starAppear 0.8s ease-out forwards;
+        animation: starAppear 0.8s ease-out forwards, starTwinkle 2s infinite ease-in-out;
         opacity: 0;
       }
       
@@ -84,6 +84,25 @@
         100% { 
           opacity: 1; 
           transform: scale(1);
+        }
+      }
+      
+      @keyframes starTwinkle {
+        0%, 100% { 
+          opacity: 0.4;
+          filter: brightness(0.8);
+        }
+        25% { 
+          opacity: 1;
+          filter: brightness(1.2);
+        }
+        50% { 
+          opacity: 0.6;
+          filter: brightness(1);
+        }
+        75% { 
+          opacity: 1;
+          filter: brightness(1.4);
         }
       }
       
@@ -241,16 +260,27 @@
 
         const length = path.getTotalLength();
 
-        // helper: create a star circle
+        // helper: create a star with varied sizes and twinkling
         function makeStar(cx, cy, i) {
           const star = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          
+          // Vary star sizes for more realistic look
+          const sizes = [1.2, 1.6, 2.0, 2.4, 2.8];
+          const starSize = sizes[Math.floor(Math.random() * sizes.length)];
+          
           star.setAttribute('cx', cx);
           star.setAttribute('cy', cy);
-          star.setAttribute('r', STAR_R);
+          star.setAttribute('r', starSize);
           star.setAttribute('fill', 'rgba(52,211,153,0.9)');
+          star.setAttribute('class', 'constellation-star');
           star.style.opacity = 0;
-          star.style.animation = `starAppear .8s ease-out forwards`;
-          star.style.animationDelay = `${(delay0 + i * 120) / 1000}s`;
+          star.style.animation = `starAppear .8s ease-out forwards, starTwinkle ${2 + Math.random() * 2}s infinite ease-in-out`;
+          star.style.animationDelay = `${(delay0 + i * 120) / 1000}s, ${(delay0 + i * 120) / 1000 + 0.8}s`;
+          
+          // Add random twinkling delay for each star
+          const twinkleDelay = Math.random() * 3;
+          star.style.setProperty('--twinkle-delay', `${twinkleDelay}s`);
+          
           return star;
         }
 
@@ -270,13 +300,28 @@
           return line;
         }
 
-        // generate stars + links
+        // generate stars + links with more natural distribution
         const points = [];
         for (let i = 0; i < N_STARS; i++) {
-          const pos = path.getPointAtLength((i / (N_STARS - 1)) * length);
-          points.push(pos);
-          svg.appendChild(makeStar(pos.x, pos.y, i));
-          if (i) svg.appendChild(makeLink(points[i - 1].x, points[i - 1].y, pos.x, pos.y, i));
+          // Add some randomness to star positions for more natural look
+          const baseProgress = (i / (N_STARS - 1)) * length;
+          const randomOffset = (Math.random() - 0.5) * (length / N_STARS) * 0.3;
+          const progress = Math.max(0, Math.min(length, baseProgress + randomOffset));
+          
+          const pos = path.getPointAtLength(progress);
+          
+          // Slight random offset from exact path position
+          const offsetX = (Math.random() - 0.5) * 8;
+          const offsetY = (Math.random() - 0.5) * 8;
+          
+          const finalPos = {
+            x: pos.x + offsetX,
+            y: pos.y + offsetY
+          };
+          
+          points.push(finalPos);
+          svg.appendChild(makeStar(finalPos.x, finalPos.y, i));
+          if (i) svg.appendChild(makeLink(points[i - 1].x, points[i - 1].y, finalPos.x, finalPos.y, i));
         }
       }
       
