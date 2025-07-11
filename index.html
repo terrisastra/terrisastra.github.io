@@ -887,6 +887,7 @@
       // Enhanced form interactions
       function setupFormInteractions() {
         const form = document.querySelector('form');
+        if (!form) return;
         const inputs = form.querySelectorAll('input, select, textarea');
 
         inputs.forEach(input => {
