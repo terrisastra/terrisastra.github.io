@@ -933,7 +933,10 @@
         setupParallax();
         
         // Set hero as initially active
-        document.querySelector('.nav-dot[data-section="hero"]').classList.add('active');
+        const heroNavDot = document.querySelector('.nav-dot[data-section="hero"]');
+        if (heroNavDot) {
+          heroNavDot.classList.add('active');
+        }
         
         // Create particles periodically with cleanup safeguards
         let particleInterval = setInterval(() => {
