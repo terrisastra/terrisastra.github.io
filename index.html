@@ -265,9 +265,8 @@
     <!-- Floating Navigation -->
     <nav class="nav-floating hidden lg:flex">
       <div class="nav-dot" data-section="hero" title="Home"></div>
-      <div class="nav-dot" data-section="product" title="Product"></div>
+      <div class="nav-dot" data-section="about" title="About"></div>
       <div class="nav-dot" data-section="technology" title="Technology"></div>
-      <div class="nav-dot" data-section="contact" title="Contact"></div>
     </nav>
     
     <!-- Main Content Wrapper -->
@@ -297,11 +296,11 @@
       </h1>
       
       <p class="text-xl text-gray-400 mb-8">
-        AI-Powered Clinical Trial Matching
+        AI Engineering
       </p>
       
       <p class="text-lg text-gray-500 mb-16 max-w-2xl mx-auto">
-        Advanced multi-agent AI framework connecting patients with optimal clinical trials and helping researchers find qualified participants faster.
+        We build advanced multi-agent AI systems.
       </p>
 
       <div class="flex items-center gap-6">
@@ -329,13 +328,9 @@
       
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
-        <a href="#product" 
+        <a href="#technology" 
            class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg transition-colors font-medium">
-          Explore Platform
-        </a>
-        <a href="#contact" 
-           class="border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-white px-8 py-3 rounded-lg transition-colors font-medium">
-          Get Started
+          Technology
         </a>
       </div>
       
@@ -368,110 +363,17 @@
       </div>
     </section>
 
-    <!-- PRODUCT SHOWCASE -->
-    <section id="product" class="relative py-20 px-6 z-10">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16 fade-in-up">
-          <h2 class="text-4xl font-light mb-6">Intelligent Trial Matching</h2>
-          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-            Our multi-agent AI system revolutionizes how patients discover clinical trials and how researchers find qualified participants.
+    <!-- ABOUT -->
+    <section id="about" class="relative py-20 px-6 z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="fade-in-up">
+          <h2 class="text-4xl font-light mb-6">About TerrisAstra</h2>
+          <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+            We are an AI engineering company specializing in building sophisticated multi-agent systems that solve complex, real-world problems.
           </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div>
-            <h3 class="text-2xl font-medium mb-6 text-emerald-400">For Patients</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-4">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 class="font-medium mb-2">Personalized Matching</h4>
-                  <p class="text-gray-400">AI agents analyze your medical history, location, and preferences to find optimal trial opportunities.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 class="font-medium mb-2">Real-time Monitoring</h4>
-                  <p class="text-gray-400">Continuous monitoring for new trials that match your profile as they become available.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 class="font-medium mb-2">Simplified Process</h4>
-                  <p class="text-gray-400">Streamlined application and communication with research teams through our platform.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
-            <div class="space-y-4">
-              <div class="flex items-center gap-3">
-                <div class="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                <span class="text-sm text-gray-400">Analyzing patient profile...</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-3 h-3 bg-blue-400 rounded-full"></div>
-                <span class="text-sm text-gray-400">Searching 12,847 active trials...</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <span class="text-sm text-gray-400">Found 23 potential matches</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span class="text-sm text-gray-400">Ranked by compatibility score</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 order-2 md:order-1">
-            <div class="space-y-6">
-              <div class="border-l-4 border-emerald-400 pl-4">
-                <h4 class="font-medium">Multi-Agent Coordination</h4>
-                <p class="text-sm text-gray-400">Specialized AI agents handle different aspects of matching</p>
-              </div>
-              <div class="border-l-4 border-blue-400 pl-4">
-                <h4 class="font-medium">Eligibility Analysis</h4>
-                <p class="text-sm text-gray-400">Deep analysis of inclusion/exclusion criteria</p>
-              </div>
-              <div class="border-l-4 border-purple-400 pl-4">
-                <h4 class="font-medium">Geographic Optimization</h4>
-                <p class="text-sm text-gray-400">Consider location, travel, and accessibility factors</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="order-1 md:order-2">
-            <h3 class="text-2xl font-medium mb-6 text-emerald-400">For Researchers</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-4">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 class="font-medium mb-2">Faster Recruitment</h4>
-                  <p class="text-gray-400">AI-powered patient identification reduces recruitment time by up to 70%.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 class="font-medium mb-2">Quality Matches</h4>
-                  <p class="text-gray-400">Higher-quality participants with better adherence to protocol requirements.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h4 class="font-medium mb-2">Analytics Dashboard</h4>
-                  <p class="text-gray-400">Real-time insights into recruitment progress and participant engagement.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+            Our expertise spans advanced natural language processing, machine learning, and distributed AI architectures. We focus on creating intelligent systems that can process, analyze, and act on complex data to deliver meaningful outcomes.
+          </p>
         </div>
       </div>
     </section>
@@ -480,9 +382,9 @@
     <section id="technology" class="relative py-20 px-6 z-10 bg-gray-900/50">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-light mb-6">Multi-Agent AI Framework</h2>
+          <h2 class="text-4xl font-light mb-6">Technology</h2>
           <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-            Our sophisticated AI system employs specialized agents that work together to deliver precise, efficient clinical trial matching.
+            We specialize in building sophisticated multi-agent AI systems that coordinate multiple specialized components to solve complex problems.
           </p>
         </div>
 
@@ -493,8 +395,8 @@
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
               </svg>
             </div>
-            <h3 class="text-xl font-medium mb-3">Eligibility Agent</h3>
-            <p class="text-gray-400">Analyzes complex inclusion/exclusion criteria against patient profiles with 95%+ accuracy.</p>
+            <h3 class="text-xl font-medium mb-3">Natural Language Processing</h3>
+            <p class="text-gray-400">Advanced text analysis and understanding capabilities for processing complex documents and data.</p>
           </div>
 
           <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-400 transition-colors card-hover fade-in-up">
@@ -503,8 +405,8 @@
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
             </div>
-            <h3 class="text-xl font-medium mb-3">Matching Agent</h3>
-            <p class="text-gray-400">Ranks trials by compatibility score considering medical, geographic, and personal factors.</p>
+            <h3 class="text-xl font-medium mb-3">Multi-Agent Systems</h3>
+            <p class="text-gray-400">Coordinated AI agents that work together to handle different aspects of complex workflows.</p>
           </div>
 
           <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-purple-400 transition-colors card-hover fade-in-up">
@@ -513,144 +415,8 @@
                 <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.11 2 2 3.11 2 4.5v15C2 20.89 3.11 22 4.5 22h15c1.39 0 2.5-1.11 2.5-2.5v-15C22 3.11 20.89 2 19.5 2z"/>
               </svg>
             </div>
-            <h3 class="text-xl font-medium mb-3">Monitoring Agent</h3>
-            <p class="text-gray-400">Continuously tracks new trials and patient status changes for real-time updates.</p>
-          </div>
-        </div>
-
-        <div class="mt-16 text-center">
-          <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 max-w-4xl mx-auto">
-            <h3 class="text-2xl font-medium mb-6">How It Works</h3>
-            <div class="grid md:grid-cols-4 gap-6">
-              <div class="text-center">
-                <div class="w-10 h-10 bg-emerald-500 rounded-full mx-auto mb-3 flex items-center justify-center text-black font-bold">1</div>
-                <h4 class="font-medium mb-2">Input Processing</h4>
-                <p class="text-sm text-gray-400">Patient data or trial criteria are analyzed</p>
-              </div>
-              <div class="text-center">
-                <div class="w-10 h-10 bg-emerald-500 rounded-full mx-auto mb-3 flex items-center justify-center text-black font-bold">2</div>
-                <h4 class="font-medium mb-2">Agent Coordination</h4>
-                <p class="text-sm text-gray-400">Specialized agents work in parallel</p>
-              </div>
-              <div class="text-center">
-                <div class="w-10 h-10 bg-emerald-500 rounded-full mx-auto mb-3 flex items-center justify-center text-black font-bold">3</div>
-                <h4 class="font-medium mb-2">Smart Matching</h4>
-                <p class="text-sm text-gray-400">Results are ranked and optimized</p>
-              </div>
-              <div class="text-center">
-                <div class="w-10 h-10 bg-emerald-500 rounded-full mx-auto mb-3 flex items-center justify-center text-black font-bold">4</div>
-                <h4 class="font-medium mb-2">Delivery</h4>
-                <p class="text-sm text-gray-400">Matches delivered with confidence scores</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="relative py-20 px-6 z-10">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-light mb-6">Get Started Today</h2>
-          <p class="text-xl text-gray-400">
-            Ready to transform clinical trial recruitment? Contact us to learn more about our AI-powered matching platform.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-2xl font-medium mb-6">Ready to Connect?</h3>
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <svg class="w-6 h-6 text-emerald-400 mt-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-                <div>
-                  <h4 class="font-medium mb-1">Email Us</h4>
-                  <a href="mailto:contact@terrisastra.com" class="text-gray-400 hover:text-emerald-400 transition-colors">
-                    contact@terrisastra.com
-                  </a>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-4">
-                <svg class="w-6 h-6 text-emerald-400 mt-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                </svg>
-                <div>
-                  <h4 class="font-medium mb-1">LinkedIn</h4>
-                  <a href="https://www.linkedin.com/company/terrisastra/" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     class="text-gray-400 hover:text-emerald-400 transition-colors">
-                    Connect with us
-                  </a>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-4">
-                <svg class="w-6 h-6 text-emerald-400 mt-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-                <div>
-                  <h4 class="font-medium mb-1">Twitter</h4>
-                  <a href="https://x.com/terrisastra" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     class="text-gray-400 hover:text-emerald-400 transition-colors">
-                    Follow updates
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
-            <form class="space-y-6" action="mailto:contact@terrisastra.com" method="post" enctype="text/plain">
-              <div>
-                <label for="name" class="block text-sm font-medium mb-2">Name</label>
-                <input type="text" id="name" name="name" required
-                       class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-emerald-400 focus:border-emerald-400 text-white">
-              </div>
-              
-              <div>
-                <label for="email" class="block text-sm font-medium mb-2">Email</label>
-                <input type="email" id="email" name="email" required
-                       class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-emerald-400 focus:border-emerald-400 text-white">
-              </div>
-              
-              <div>
-                <label for="organization" class="block text-sm font-medium mb-2">Organization</label>
-                <input type="text" id="organization" name="organization"
-                       class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-emerald-400 focus:border-emerald-400 text-white">
-              </div>
-              
-              <div>
-                <label for="interest" class="block text-sm font-medium mb-2">I'm interested in</label>
-                <select id="interest" name="interest" required
-                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-emerald-400 focus:border-emerald-400 text-white">
-                  <option value="">Select an option</option>
-                  <option value="patient-matching">Patient Matching Platform</option>
-                  <option value="researcher-tools">Researcher Tools</option>
-                  <option value="partnership">Partnership Opportunities</option>
-                  <option value="demo">Platform Demo</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              
-              <div>
-                <label for="message" class="block text-sm font-medium mb-2">Message</label>
-                <textarea id="message" name="message" rows="4" required
-                          class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-emerald-400 focus:border-emerald-400 text-white"
-                          placeholder="Tell us about your clinical trial matching needs..."></textarea>
-              </div>
-              
-              <button type="submit" 
-                      class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-lg transition-colors font-medium">
-                Send Message
-              </button>
-            </form>
+            <h3 class="text-xl font-medium mb-3">Scalable Architecture</h3>
+            <p class="text-gray-400">Cloud-native systems designed for reliable performance and efficient processing at scale.</p>
           </div>
         </div>
       </div>
@@ -664,7 +430,7 @@
           <div class="md:col-span-2">
             <h3 class="text-xl font-medium mb-4">Terris<span class="text-emerald-400">Astra</span></h3>
             <p class="text-gray-400 mb-4 max-w-md">
-              Transforming clinical trial recruitment with advanced AI-powered patient matching and multi-agent frameworks.
+              Building advanced multi-agent AI systems for complex real-world problems.
             </p>
             <div class="flex items-center gap-4">
               <a href="https://www.linkedin.com/company/terrisastra/" 
@@ -688,11 +454,10 @@
 
           <!-- Quick Links -->
           <div>
-            <h4 class="font-medium mb-4">Platform</h4>
+            <h4 class="font-medium mb-4">Company</h4>
             <ul class="space-y-2 text-sm">
-              <li><a href="#product" class="text-gray-400 hover:text-emerald-400 transition-colors">Patient Matching</a></li>
-              <li><a href="#technology" class="text-gray-400 hover:text-emerald-400 transition-colors">AI Framework</a></li>
-              <li><a href="#contact" class="text-gray-400 hover:text-emerald-400 transition-colors">Request Demo</a></li>
+              <li><a href="#about" class="text-gray-400 hover:text-emerald-400 transition-colors">About</a></li>
+              <li><a href="#technology" class="text-gray-400 hover:text-emerald-400 transition-colors">Technology</a></li>
             </ul>
           </div>
 
@@ -701,8 +466,6 @@
             <h4 class="font-medium mb-4">Contact</h4>
             <ul class="space-y-2 text-sm">
               <li><a href="mailto:contact@terrisastra.com" class="text-gray-400 hover:text-emerald-400 transition-colors">contact@terrisastra.com</a></li>
-              <li><span class="text-gray-400">Partnership Inquiries</span></li>
-              <li><span class="text-gray-400">Research Collaboration</span></li>
             </ul>
           </div>
         </div>
@@ -712,11 +475,6 @@
           <p class="text-sm text-gray-500">
             © 2024 TerrisAstra. All rights reserved.
           </p>
-          <div class="flex items-center gap-6 text-sm">
-            <span class="text-gray-500">Privacy Policy</span>
-            <span class="text-gray-500">Terms of Service</span>
-            <span class="text-gray-500">Healthcare Compliance</span>
-          </div>
         </div>
       </div>
     </footer>
